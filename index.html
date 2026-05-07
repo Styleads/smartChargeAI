@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCharge AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="brand">SmartCharge <span>AI</span></div>
+    <div class="nav-tabs" id="nav-tabs">
+        <button class="nav-tab active" data-target="overview">Overview</button>
+        <button class="nav-tab" data-target="forecast">Demand Forecast</button>
+        <button class="nav-tab" data-target="scheduling">Scheduling</button>
+        <button class="nav-tab" data-target="infrastructure">Infrastructure</button>
+        <button class="nav-tab" data-target="explorer">Zone Explorer</button>
+        <button class="nav-tab" data-target="export">Export & Reports</button>
+    </div>
+</nav>
+
+<div class="container">
+    
+    <!-- PAGE 1: OVERVIEW -->
+    <div id="overview" class="page active">
+        <div class="row">
+            <div class="col metric-card">
+                <span class="metric-label">Zones Monitored</span>
+                <span class="metric-value" id="ov-monitored">-</span>
+            </div>
+            <div class="col metric-card">
+                <span class="metric-label">High Risk Zones</span>
+                <span class="metric-value text-danger" id="ov-highrisk">-</span>
+            </div>
+            <div class="col metric-card">
+                <span class="metric-label">Sites Recommended</span>
+                <span class="metric-value text-success" id="ov-sites">-</span>
+            </div>
+            <div class="col metric-card">
+                <span class="metric-label">Stress Events Detected</span>
+                <span class="metric-value text-danger" id="ov-stress">-</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col card">
+                <div class="card-title">Top 5 High-Risk Zones</div>
+                <div class="table-container">
+                    <table id="ov-top-zones">
+                        <thead>
+                            <tr><th data-col="zone_name">Zone</th><th data-col="demand_pressure_score" class="num">Pressure Score</th></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-2 card">
+                <div class="card-title">Demand Pressure Distribution</div>
+                <div class="chart-wrapper">
+                    <canvas id="ov-dist-chart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">All Zones</div>
+            <div class="table-container">
+                <table id="ov-all-zones" class="sortable">
+                    <thead>
+                        <tr>
+                            <th data-col="zone_id">ID</th>
+                            <th data-col="zone_name">Zone Name</th>
+                            <th data-col="land_use_type">Type</th>
+                            <th data-col="ev_count_current" class="num">EV Count</th>
+                            <th data-col="feeder_capacity_kw" class="num">Feeder Cap (kW)</th>
+                            <th data-col="avg_peak_demand_kw" class="num">Peak Demand (kW)</th>
+                            <th data-col="stress_event_count" class="num">Stress Events</th>
+                            <th data-col="demand_pressure_score" class="num">Pressure Score</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2: DEMAND FORECAST -->
+    <div id="forecast" class="page">
+        <div class="control-group">
+            <label class="control-label">Select Zone</label>
+            <select id="fc-zone-select"></select>
+        </div>
+        <div class="row">
+            <div class="col metric-card">
+                <span class="metric-label">Demand Score</span>
+                <span class="metric-value" id="fc-score">-</span>
+            </div>
+            <div class="col metric-card">
+                <span class="metric-label">Feeder Capacity</span>
+                <span class="metric-value" id="fc-cap">-</span>
+            </div>
+            <div class="col metric-card">
+                <span class="metric-label">Avg Peak Demand</span>
+                <span class="metric-value" id="fc-peak">-</span>
+            </div>
+            <div class="col metric-card">
+                <span class="metric-label">Stress Events</span>
+                <span class="metric-value" id="fc-stress">-</span>
+            </div>
+        </div>
+        <div class="card mb-20">
+            <div class="card-title">24-Hour Forecast</div>
+            <div class="chart-legend">
+                <div class="legend-item"><div class="legend-color" style="background: var(--chart-primary);"></div> Predicted Demand</div>
+                <div class="legend-item"><div class="legend-color" style="background: var(--chart-risk);"></div> Feeder Capacity</div>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="fc-line-chart"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 card">
+                <div class="card-title">Feature Importance</div>
+                <div class="chart-wrapper">
+                    <canvas id="fc-feat-chart"></canvas>
+                </div>
+            </div>
+            <div class="col card">
+                <div class="card-title">Model Insights</div>
+                <div class="mb-20">
+                    <div class="metric-label">Model MAPE</div>
+                    <div class="metric-value text-success">1.74%</div>
+                </div>
+                <div class="mb-20">
+                    <div class="metric-label">Model R²</div>
+                    <div class="metric-value text-success">0.9989</div>
+                </div>
+                <div class="mb-20">
+                    <div class="metric-label">Features Used</div>
+                    <div class="metric-value">22</div>
+                </div>
+                <p style="font-size:12px; color:var(--text-muted)">lag_168h dominates due to strong weekly cycle. Short-term lags capture momentum.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3: SCHEDULING -->
+    <div id="scheduling" class="page">
+        <div class="card mb-20">
+            <div class="control-group" style="margin-bottom:0;">
+                <label class="control-label">Adoption Scenario (<span id="sc-adoption-val">50</span>%)</label>
+                <input type="range" id="sc-adoption" min="20" max="80" value="50" step="10">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col metric-card">
+                <span class="metric-label">Total Zones Analyzed</span>
+                <span class="metric-value">35</span>
+            </div>
+            <div class="col metric-card">
+                <span class="metric-label">Target Shift Window</span>
+                <span class="metric-value text-success">Off-Peak</span>
+            </div>
+            <div class="col metric-card">
+                <span class="metric-label">Max Load Reduction</span>
+                <span class="metric-value text-success" id="sc-max-red">-</span>
+            </div>
+        </div>
+        <div class="card mb-20">
+            <div class="card-title">Load Reduction by Zone</div>
+            <div class="chart-wrapper">
+                <canvas id="sc-bar-chart"></canvas>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">Zone Scheduling Recommendations</div>
+            <div class="table-container">
+                <table id="sc-table" class="sortable">
+                    <thead>
+                        <tr>
+                            <th data-col="zone_name">Zone</th>
+                            <th data-col="typical_peak_window">Peak Hours</th>
+                            <th data-col="recommended_charging_window">Shift Window</th>
+                            <th data-col="demand_pressure_score" class="num">Pressure Score</th>
+                            <th data-col="shift_impact_kw" class="num">Base Shift Amount (kW)</th>
+                            <th data-col="calculated_reduction" class="num text-success">Est. Load Reduction (kW)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 4: INFRASTRUCTURE -->
+    <div id="infrastructure" class="page">
+        <div class="row">
+            <div class="col metric-card">
+                <span class="metric-label">Sites Evaluated</span>
+                <span class="metric-value">80</span>
+            </div>
+            <div class="col metric-card">
+                <span class="metric-label">Sites Recommended</span>
+                <span class="metric-value text-success" id="in-sites">-</span>
+            </div>
+            <div class="col metric-card">
+                <span class="metric-label">Vs Baseline Uniform</span>
+                <span class="metric-value text-success">+32.8%</span>
+            </div>
+        </div>
+        <div class="card mb-20">
+            <div class="card-title">Opportunity Score Breakdown (Top 10)</div>
+            <div class="chart-legend">
+                <div class="legend-item"><div class="legend-color" style="background: var(--chart-risk);"></div> Demand</div>
+                <div class="legend-item"><div class="legend-color" style="background: var(--chart-primary);"></div> Grid Capacity</div>
+                <div class="legend-item"><div class="legend-color" style="background: var(--chart-positive);"></div> Accessibility</div>
+                <div class="legend-item"><div class="legend-color" style="background: var(--accent);"></div> Coverage Gap</div>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="in-stack-chart"></canvas>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">Recommended Sites Full Breakdown</div>
+            <div class="table-container">
+                <table id="in-table" class="sortable">
+                    <thead>
+                        <tr>
+                            <th data-col="site_name">Site</th>
+                            <th data-col="zone_id">Zone</th>
+                            <th data-col="confidence_tier">Tier</th>
+                            <th data-col="opportunity_score" class="num">Score</th>
+                            <th data-col="demand_contribution" class="num">Demand</th>
+                            <th data-col="grid_contribution" class="num">Grid</th>
+                            <th data-col="accessibility_contribution" class="num">Access</th>
+                            <th data-col="coverage_contribution" class="num">Coverage</th>
+                            <th data-col="available_grid_capacity_kw" class="num">Grid Cap (kW)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 5: ZONE EXPLORER -->
+    <div id="explorer" class="page">
+        <div class="control-group">
+            <label class="control-label">Select Zone to Explore</label>
+            <select id="ex-zone-select"></select>
+        </div>
+        <div class="row">
+            <div class="col metric-card">
+                <span class="metric-label">EV Count</span>
+                <span class="metric-value" id="ex-ev">-</span>
+            </div>
+            <div class="col metric-card">
+                <span class="metric-label">Demand Score</span>
+                <span class="metric-value" id="ex-score">-</span>
+            </div>
+            <div class="col metric-card">
+                <span class="metric-label">Peak Demand</span>
+                <span class="metric-value" id="ex-peak">-</span>
+            </div>
+            <div class="col metric-card">
+                <span class="metric-label">Stress Events</span>
+                <span class="metric-value" id="ex-stress">-</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col card">
+                <div class="card-title">Demand Growth Projection</div>
+                <div class="chart-wrapper">
+                    <canvas id="ex-bar-chart"></canvas>
+                </div>
+            </div>
+            <div class="col card">
+                <div class="card-title">Scheduling Recommendation</div>
+                <div class="mb-20 mt-20" style="padding:16px; background:rgba(29, 158, 117, 0.1); border-left:4px solid var(--chart-positive); border-radius:4px;">
+                    <div style="font-size:14px; font-weight:500; margin-bottom:8px">Shift Window: <span id="ex-shift-win" style="color:var(--text-main)">-</span></div>
+                    <div style="font-size:14px; font-weight:500;">Base Shift Amount: <span id="ex-shift-amt" style="color:var(--text-main)">-</span></div>
+                </div>
+                <div class="row">
+                    <div class="col metric-card">
+                        <span class="metric-label">20% Adoption</span>
+                        <span class="metric-value text-success" id="ex-ad-20">-</span>
+                    </div>
+                    <div class="col metric-card">
+                        <span class="metric-label">50% Adoption</span>
+                        <span class="metric-value text-success" id="ex-ad-50">-</span>
+                    </div>
+                    <div class="col metric-card">
+                        <span class="metric-label">80% Adoption</span>
+                        <span class="metric-value text-success" id="ex-ad-80">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 6: EXPORT & REPORTS -->
+    <div id="export" class="page">
+        <div class="card mb-20">
+            <div class="card-title">Data Exports</div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary w-100 mb-20" onclick="window.open('outputs/forecasts/zone_forecasts_24h.csv')">Download Forecast Data</button>
+                    <div class="metric-label">24-hour demand forecast — all 35 zones</div>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary w-100 mb-20" onclick="window.open('outputs/scheduling/zone_recommendations.csv')">Download Scheduling Data</button>
+                    <div class="metric-label">Zone scheduling recommendations</div>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary w-100 mb-20" onclick="window.open('outputs/siteintel/siteintel_recommendations.csv')">Download Site Rankings</button>
+                    <div class="metric-label">Top 10 recommended station sites</div>
+                </div>
+            </div>
+            <hr style="border:none; border-top:1px solid var(--border-color); margin: 20px 0;">
+            <div class="card-title">PDF Report</div>
+            <button class="btn btn-primary" onclick="alert('PDF generation requires backend processing in this static version.')">Generate PDF Report</button>
+        </div>
+        <div class="card">
+            <div class="card-title">Audit Log</div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr><th>Timestamp</th><th>Action</th><th>Output</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Just Now</td><td>SiteIntel recommendations generated</td><td>10 sites recommended, +32.8% vs baseline</td><td class="text-success">Complete</td></tr>
+                        <tr><td>1 Hour Ago</td><td>ChargeCast 24h forecast generated</td><td>840 forecast records, MAPE 1.74%</td><td class="text-success">Complete</td></tr>
+                        <tr><td>2 Hours Ago</td><td>Zone demand scores updated</td><td>35 zones scored, stress zones identified</td><td class="text-success">Complete</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

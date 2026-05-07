@@ -1,0 +1,9 @@
+zone_id,zone_name,typical_peak_window,recommended_charging_window,avg_peak_demand_kw,shift_impact_kw,shift_impact_pct,feeder_capacity_kw,land_use_type,high_priority,impact_20pct,impact_50pct,impact_80pct
+Z001,Whitefield,18:00-23:00,00:00-04:00,81.37,40.68,2.77,1470,mixed,True,16.27,40.68,65.1
+Z002,Koramangala,19:00-22:00,02:00-06:00,53.41,26.71,1.65,1614,commercial,True,10.68,26.7,42.73
+Z005,Electronic City,17:00-23:00,01:00-05:00,82.94,41.47,1.59,2605,industrial,True,16.59,41.47,66.35
+Z006,Marathahalli,18:00-22:00,00:00-04:00,85.89,42.95,3.16,1360,mixed,True,17.18,42.94,68.71
+Z008,Sarjapur Road,18:00-22:00,01:00-05:00,69.79,34.9,2.96,1181,residential,True,13.96,34.9,55.83
+Z015,Bagalur,18:00-23:00,00:00-04:00,56.5,28.25,2.43,1161,logistics,True,11.3,28.25,45.2
+Z017,Mahadevapura,15:00-23:00,00:00-04:00,87.45,43.72,1.73,2529,industrial,True,17.49,43.72,69.96
+Z020,Malleswaram,18:00-23:00,01:00-05:00,53.97,26.99,2.08,1295,commercial,True,10.79,26.98,43.18

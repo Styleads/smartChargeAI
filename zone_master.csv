@@ -1,0 +1,36 @@
+zone_id,zone_name,latitude,longitude,land_use_type,ev_count_current,ev_growth_rate_monthly,feeder_capacity_kw,existing_station_count,population_density
+Z001,Whitefield,12.9698,77.7499,mixed,3126,0.0419,1470,8,medium
+Z002,Koramangala,12.9352,77.6245,commercial,2295,0.029,1614,6,medium
+Z003,HSR Layout,12.9116,77.6389,mixed,666,0.016,1658,4,medium
+Z004,Indiranagar,12.9784,77.6408,commercial,2323,0.0221,1130,5,medium
+Z005,Electronic City,12.8399,77.677,industrial,3332,0.0445,2605,7,low
+Z006,Marathahalli,12.9591,77.6972,mixed,3215,0.0449,1360,5,medium
+Z007,Bellandur,12.9261,77.6762,mixed,2021,0.0301,2056,0,medium
+Z008,Sarjapur Road,12.901,77.6849,residential,2474,0.0542,1181,2,high
+Z009,BTM Layout,12.9166,77.6101,residential,789,0.0214,1062,4,high
+Z010,Jayanagar,12.9308,77.5836,residential,1431,0.027,984,3,high
+Z011,Banashankari,12.9255,77.5468,residential,1246,0.0226,666,2,high
+Z012,JP Nagar,12.9063,77.5857,residential,987,0.0341,513,3,high
+Z013,Hebbal,13.0354,77.597,mixed,545,0.016,1539,4,medium
+Z014,Yelahanka,13.1007,77.5963,residential,1555,0.0218,1008,2,high
+Z015,Bagalur,13.149,77.781,logistics,2034,0.0586,1161,1,low
+Z016,KR Puram,13.005,77.694,mixed,589,0.0171,1971,1,medium
+Z017,Mahadevapura,12.994,77.71,industrial,3500,0.0445,2529,1,low
+Z018,Hoskote,13.0704,77.798,logistics,401,0.0584,869,2,low
+Z019,Rajajinagar,12.9902,77.556,residential,1415,0.0249,961,2,high
+Z020,Malleswaram,13.0035,77.5665,commercial,2475,0.0207,1295,3,medium
+Z021,Yeshwanthpur,13.022,77.551,commercial,537,0.0281,1791,1,medium
+Z022,Tumkur Road,13.06,77.51,logistics,416,0.0178,979,0,low
+Z023,Peenya,13.029,77.519,industrial,240,0.018,1864,0,low
+Z024,Dasarahalli,13.044,77.509,industrial,720,0.0227,2447,2,low
+Z025,Kengeri,12.9074,77.4822,residential,1762,0.023,891,2,high
+Z026,Uttarahalli,12.8937,77.5412,residential,1018,0.0316,989,2,high
+Z027,Mysore Road,12.95,77.5,logistics,240,0.0241,800,1,low
+Z028,Bannerghatta Road,12.88,77.597,mixed,232,0.0156,1606,1,medium
+Z029,Electronic City Phase 2,12.827,77.676,industrial,298,0.0209,2525,2,low
+Z030,Bommanahalli,12.896,77.636,residential,1560,0.0257,961,2,high
+Z031,Devanahalli,13.246,77.712,logistics,204,0.0534,1366,1,low
+Z032,Nelamangala,13.098,77.392,logistics,592,0.0221,1457,1,low
+Z033,Anekal,12.71,77.696,industrial,660,0.017,2663,2,low
+Z034,Varthur,12.94,77.746,residential,1163,0.0534,984,2,high
+Z035,Domlur,12.9602,77.6391,commercial,1430,0.0262,1170,3,medium

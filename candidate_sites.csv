@@ -1,0 +1,81 @@
+site_id,zone_id,site_name,latitude,longitude,site_type,available_grid_capacity_kw,road_accessibility_score,distance_to_nearest_station_km,land_availability
+S001,Z001,Whitefield Metro Park-and-Ride,12.9773,77.7523,metro_station,480,0.84,1.2,available
+S002,Z001,Whitefield Metro Station Forecourt,12.9623,77.7502,metro_station,207,0.94,0.4,available
+S003,Z001,Whitefield Public Parking Facility,12.9757,77.7525,parking_lot,169,0.65,1.4,pending_approval
+S004,Z001,Whitefield NH Junction Node,12.9725,77.7617,highway_node,397,1.0,1.4,restricted
+S005,Z002,Koramangala Public Parking Facility,12.9246,77.6142,parking_lot,274,0.83,1.1,available
+S006,Z002,Koramangala Namma Metro Hub,12.9376,77.6246,metro_station,223,0.85,0.9,available
+S007,Z002,Koramangala Brigade Gateway,12.932,77.6203,commercial_complex,268,0.7,0.9,available
+S008,Z002,Koramangala Brigade Gateway,12.9342,77.6112,commercial_complex,273,0.84,0.9,available
+S009,Z003,HSR Layout Brigade Gateway,12.9155,77.6291,commercial_complex,273,0.73,0.5,pending_approval
+S010,Z003,HSR Layout Public Parking Facility,12.898,77.6496,parking_lot,143,0.78,0.9,available
+S011,Z003,HSR Layout Mall Parking Deck,12.9082,77.6314,parking_lot,139,0.74,1.3,available
+S012,Z003,HSR Layout Mall Parking Deck,12.9099,77.6306,parking_lot,313,0.62,1.1,pending_approval
+S013,Z004,Indiranagar Phoenix Marketcity Lot,12.9725,77.65,commercial_complex,350,0.71,0.3,pending_approval
+S014,Z004,Indiranagar Highway Rest Stop,12.978,77.6549,highway_node,404,0.8,1.4,pending_approval
+S015,Z004,Indiranagar Mall Parking Deck,12.9714,77.6414,parking_lot,164,0.7,1.0,available
+S016,Z005,Electronic City Metro Parking Lot,12.8293,77.6864,parking_lot,242,0.59,0.4,available
+S017,Z005,Electronic City Mantri Square Bay,12.8322,77.6731,commercial_complex,374,0.91,1.4,available
+S018,Z005,Electronic City Sobha Dream Acres Lot,12.8503,77.6751,residential_complex,179,0.51,1.3,available
+S019,Z005,Electronic City IT Park Lot,12.8277,77.6753,parking_lot,176,0.58,1.0,available
+S020,Z006,Marathahalli Shell Fuel Point,12.9627,77.6854,fuel_station,171,0.98,0.3,pending_approval
+S021,Z006,Marathahalli IT Park Lot,12.9527,77.6909,parking_lot,197,0.63,1.0,available
+S022,Z006,Marathahalli Highway Rest Stop,12.965,77.6923,highway_node,410,0.81,1.3,pending_approval
+S023,Z007,Bellandur Bharat Petroleum Station,12.9295,77.6666,fuel_station,113,0.93,5.9,available
+S024,Z007,Bellandur Mantri Square Bay,12.9309,77.6728,commercial_complex,347,0.7,5.1,available
+S025,Z007,Bellandur Brigade Gateway,12.914,77.6806,commercial_complex,340,0.84,5.2,available
+S026,Z008,Sarjapur Road Brigade Gateway,12.9098,77.68,commercial_complex,280,0.86,1.0,available
+S027,Z008,Sarjapur Road Metro East Exit Plaza,12.8907,77.6821,metro_station,426,0.85,2.7,available
+S028,Z008,Sarjapur Road Metro Station Forecourt,12.8957,77.6857,metro_station,421,0.82,3.2,available
+S029,Z009,BTM Layout Shell Fuel Point,12.924,77.6134,fuel_station,249,0.89,1.4,pending_approval
+S030,Z009,BTM Layout Metro Parking Lot,12.9287,77.5971,parking_lot,339,0.61,1.4,available
+S031,Z009,BTM Layout IT Park Lot,12.9143,77.6112,parking_lot,344,0.84,0.9,available
+S032,Z010,Jayanagar Mall Parking Deck,12.9343,77.5898,parking_lot,223,0.79,1.4,available
+S033,Z010,Jayanagar IT Park Lot,12.9351,77.5944,parking_lot,302,0.84,1.3,available
+S034,Z010,Jayanagar Forum Mall Basement,12.9419,77.5896,commercial_complex,170,0.89,3.7,available
+S035,Z011,Banashankari Metro East Exit Plaza,12.9266,77.5555,metro_station,251,0.87,2.4,pending_approval
+S036,Z011,Banashankari Metro Parking Lot,12.9157,77.5344,parking_lot,319,0.68,2.2,available
+S037,Z011,Banashankari Metro Parking Lot,12.9273,77.5364,parking_lot,241,0.63,2.7,pending_approval
+S038,Z012,JP Nagar Phoenix Marketcity Lot,12.914,77.5761,commercial_complex,191,0.71,2.6,available
+S039,Z012,JP Nagar Public Parking Facility,12.9075,77.5847,parking_lot,192,0.76,1.1,available
+S040,Z013,Hebbal Sobha Dream Acres Lot,13.042,77.6103,residential_complex,70,0.54,1.3,restricted
+S041,Z013,Hebbal Purva Skydale Bay,13.0426,77.5931,residential_complex,100,0.44,0.4,pending_approval
+S042,Z013,Hebbal Metro Parking Lot,13.0368,77.5847,parking_lot,157,0.76,0.3,available
+S043,Z014,Yelahanka Brigade Gateway,13.0992,77.5821,commercial_complex,278,0.72,1.5,pending_approval
+S044,Z014,Yelahanka Metro Parking Lot,13.093,77.6006,parking_lot,124,0.59,1.3,pending_approval
+S045,Z014,Yelahanka NH Junction Node,13.1118,77.5867,highway_node,329,0.81,3.9,available
+S046,Z014,Yelahanka Metro Park-and-Ride,13.1075,77.5984,metro_station,217,0.7,1.9,available
+S047,Z015,Bagalur Shell Fuel Point,13.1353,77.7809,fuel_station,255,0.93,3.4,available
+S048,Z016,KR Puram Metro Parking Lot,13.0173,77.6938,parking_lot,347,0.58,1.1,pending_approval
+S049,Z016,KR Puram Metro East Exit Plaza,13.0021,77.6979,metro_station,212,0.71,1.6,available
+S050,Z017,Mahadevapura Sobha Dream Acres Lot,13.0014,77.7185,residential_complex,181,0.55,2.4,restricted
+S051,Z018,Hoskote Mall Parking Deck,13.0852,77.8005,parking_lot,275,0.77,2.8,pending_approval
+S052,Z018,Hoskote Indian Oil Pump,13.0663,77.8063,fuel_station,177,0.86,1.4,available
+S053,Z019,Rajajinagar Metro Station Forecourt,12.9882,77.5481,metro_station,342,0.81,2.0,available
+S054,Z019,Rajajinagar Indian Oil Pump,12.9923,77.5507,fuel_station,140,0.87,2.5,restricted
+S055,Z020,Malleswaram Bharat Petroleum Station,13.0099,77.5635,fuel_station,258,0.96,4.0,available
+S056,Z020,Malleswaram Phoenix Marketcity Lot,12.999,77.5809,commercial_complex,367,0.89,2.5,pending_approval
+S057,Z021,Yeshwanthpur Prestige Apartments Gate,13.0182,77.5554,residential_complex,50,0.73,1.0,available
+S058,Z021,Yeshwanthpur Prestige Apartments Gate,13.0308,77.561,residential_complex,136,0.57,3.8,pending_approval
+S059,Z022,Tumkur Road Sobha Dream Acres Lot,13.0715,77.5186,residential_complex,159,0.71,3.4,pending_approval
+S060,Z022,Tumkur Road Metro Parking Lot,13.069,77.5081,parking_lot,138,0.74,5.0,available
+S061,Z023,Peenya Ring Road Service Area,13.0404,77.5194,highway_node,362,0.98,7.7,available
+S062,Z023,Peenya Mall Parking Deck,13.0252,77.5237,parking_lot,122,0.83,6.2,available
+S063,Z024,Dasarahalli Ring Road Service Area,13.0493,77.5176,highway_node,500,0.81,3.5,available
+S064,Z025,Kengeri Sobha Dream Acres Lot,12.917,77.4728,residential_complex,85,0.66,3.9,pending_approval
+S065,Z026,Uttarahalli Purva Skydale Bay,12.8883,77.5297,residential_complex,67,0.55,1.0,pending_approval
+S066,Z026,Uttarahalli Namma Metro Hub,12.8874,77.5395,metro_station,279,0.81,2.8,available
+S067,Z027,Mysore Road Mall Parking Deck,12.9612,77.488,parking_lot,246,0.59,1.7,pending_approval
+S068,Z028,Bannerghatta Road Brigade Gateway,12.8883,77.6001,commercial_complex,226,0.89,1.0,available
+S069,Z028,Bannerghatta Road Bharat Petroleum Station,12.8675,77.5972,fuel_station,181,0.85,3.2,restricted
+S070,Z029,Electronic City Phase 2 Metro East Exit Plaza,12.8257,77.6732,metro_station,290,0.94,3.0,available
+S071,Z030,Bommanahalli HP Fuel Station,12.887,77.6475,fuel_station,261,0.98,1.7,available
+S072,Z031,Devanahalli Indian Oil Pump,13.2452,77.7164,fuel_station,166,0.96,1.5,available
+S073,Z031,Devanahalli Highway Rest Stop,13.2503,77.713,highway_node,404,0.84,3.2,pending_approval
+S074,Z032,Nelamangala Prestige Apartments Gate,13.0941,77.3852,residential_complex,114,0.5,1.4,available
+S075,Z032,Nelamangala Highway Rest Stop,13.0932,77.3838,highway_node,362,0.81,2.7,available
+S076,Z033,Anekal Prestige Apartments Gate,12.7146,77.7078,residential_complex,71,0.74,1.9,available
+S077,Z033,Anekal Phoenix Marketcity Lot,12.7171,77.7042,commercial_complex,369,0.73,3.0,restricted
+S078,Z034,Varthur Metro Parking Lot,12.9468,77.7384,parking_lot,130,0.65,3.8,available
+S079,Z035,Domlur Purva Skydale Bay,12.9617,77.6471,residential_complex,142,0.44,1.7,available
+S080,Z035,Domlur HP Fuel Station,12.9562,77.6318,fuel_station,143,0.98,3.4,available
