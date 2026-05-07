@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 import json
-from fpdf import FPDF
+
 import datetime
 import calendar
 import os
